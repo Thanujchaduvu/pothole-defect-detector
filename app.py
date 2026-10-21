@@ -12,6 +12,8 @@ if not Path(WEIGHTS).exists():
     raise FileNotFoundError(
         f"{WEIGHTS} not found. Train first (python scripts/train.py) or place best.pt in models/."
     )
+print(f"Starting app. Model path: {Path(WEIGHTS).resolve()}", flush=True)
+print(f"Model file exists: {Path(WEIGHTS).exists()}", flush=True)
 detector = PotholeDetector(WEIGHTS)
 
 COLORS = {"NONE": "#2e7d32", "LOW": "#9e9d24", "MEDIUM": "#ef6c00",
@@ -60,6 +62,7 @@ with gr.Blocks(title="Pothole & Defect Detector") as demo:
         gr.Examples(examples=examples, inputs=inp)
 
 if __name__ == "__main__":
+    print(f"Launching Gradio on 0.0.0.0:{os.environ.get('PORT', '10000')}", flush=True)
     demo.launch(
         server_name="0.0.0.0",
         server_port=int(os.environ.get("PORT", "10000"))
