@@ -1,0 +1,9 @@
+# Roboflow export writes the real file to datasets/pothole/data.yaml.
+# If paths are broken, make them look like this (relative to this file's folder):
+path: .
+train: train/images
+val: valid/images
+test: test/images
+
+nc: 1
+names: ['pothole']

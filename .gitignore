@@ -1,0 +1,25 @@
+# Datasets (re-download with scripts/download_dataset.py)
+datasets/*
+!datasets/.gitkeep
+
+# Weights and training outputs
+*.pt
+*.onnx
+runs/*
+!runs/.gitkeep
+models/*
+!models/.gitkeep
+
+# Secrets
+.env
+*.key
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
